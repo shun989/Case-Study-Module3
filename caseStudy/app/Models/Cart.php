@@ -3,7 +3,6 @@
 namespace App\Models;
 
 
-
 class Cart
 {
     public $items = [];
@@ -22,25 +21,25 @@ class Cart
     public function add($product)
     {
         $storeItem = [
-            'product'=> $product,
-            'quantity'=> 0,
+            'product' => $product,
+            'quantity' => 0,
             'money' => 0,
         ];
         if (array_key_exists($product->id, $this->items)) {
-          echo 'alert("sp da co trong gio hang")';
-        }else{
+            echo 'alert("sp da co trong gio hang")';
+        } else {
 
             $storeItem['quantity'] += 1;
             $storeItem['money'] += $product->price;
 
-//        $this->totalQuantity++;
-//        $this->totalPrice += $product->price;
+            $this->totalQuantity++;
+            $this->totalPrice += $product->price;
             $this->items[$product->id] = $storeItem;
         }
 
     }
 
-    public function delete($product,$id)
+    public function delete($product, $id)
     {
         $currentItem = $this->items[$product->id];
         if (array_key_exists($id, $this->items)) {
