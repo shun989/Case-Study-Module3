@@ -21,8 +21,7 @@ class AppServiceProvider extends ServiceProvider
             ProductRepository::class,
             ProductRepositoryImpl::class
         );
-        $this->app->singleton(
-            ProductService::class,
+        $this->app->singleton(ProductService::class,
             ProductServiceImpl::class
         );
     }
