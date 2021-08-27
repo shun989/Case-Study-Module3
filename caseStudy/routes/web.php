@@ -53,7 +53,7 @@ Route::group(['middleware' => 'locale'], function () {
         })->name('register');
         Route::get('/admin', [HomeController::class, 'showPageAdmin'])->name('admin');
 
-        Route::get('/show', [ProductController::class, 'index'])->name('admin.index');
+        Route::get('/table', [ProductController::class, 'index'])->name('admin.index');
         Route::get('/card', [ProductController::class, 'showCard'])->name('admin.showCard');
         Route::get('/create', [ProductController::class, 'createForm'])->name('admin.createForm');
         Route::post('/create', [ProductController::class, 'create'])->name('admin.create');

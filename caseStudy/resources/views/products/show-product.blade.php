@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <title>Shop Homepage - Start Bootstrap Template</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}" />
-    <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}"/>
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet"/>
     <link href="{{asset('css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -15,14 +15,15 @@
 
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{asset('dataTables.bootstrap4.min.css')}}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
 </head>
 <style>
-    .auth-user{
+    .auth-user {
         margin: 0 5px;
         text-decoration: none;
     }
-    .title-image{
+
+    .title-image {
         font-family: Arial, Helvetica, sans-serif;
         background-image: url("public/img/all.jpg");
         background-color: #10d753;
@@ -31,7 +32,8 @@
         position: relative;
         height: 300px;
     }
-    .title-text{
+
+    .title-text {
         text-align: center;
         position: absolute;
         top: 50%;
@@ -39,12 +41,14 @@
         transform: translate(-50%, -50%);
         color: #0e4eea;
     }
-    a.to-cart{
+
+    a.to-cart {
         padding: 7px 0;
         color: #383434;
         text-decoration: none;
     }
-    a.to-cart:hover{
+
+    a.to-cart:hover {
         color: whitesmoke;
     }
 </style>
@@ -53,25 +57,34 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="{{route('home')}}">{{__('language.title')}}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('home')}}">{{__('language.Home')}}</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                        href="{{route('home')}}">{{__('language.Home')}}</a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">{{__('language.About')}}</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('language.Shop')}}</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">{{__('language.Shop')}}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">{{__('language.All Products')}}</a></li>
-                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                            <hr class="dropdown-divider"/>
+                        </li>
                         <li><a class="dropdown-item" href="#">{{__('language.Popular Items')}}</a></li>
                         <li><a class="dropdown-item" href="#">{{__('language.New Arrivals')}}</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('language.language')}}</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">{{__('language.language')}}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{route('view.change-language',['en'])}}">{{__('language.English')}}</a></li>
-                        <li><a class="dropdown-item" href="{{route('view.change-language',['vi'])}}">{{__('language.Vietnam')}}</a></li>
+                        <li><a class="dropdown-item"
+                               href="{{route('view.change-language',['en'])}}">{{__('language.English')}}</a></li>
+                        <li><a class="dropdown-item"
+                               href="{{route('view.change-language',['vi'])}}">{{__('language.Vietnam')}}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -79,23 +92,22 @@
                 <button class="btn btn-outline-dark" type="submit">
                     <i class="bi-cart-fill me-1"></i>
                     <a class="to-cart" href="{{route('cart.index')}}">{{__('language.Cart')}}</a>
-                    <span class="badge bg-dark text-white ms-1 rounded-pill total-count">{{ $carts->totalQuantity ?? 0 }}</span>
+                    <span
+                        class="badge bg-dark text-white ms-1 rounded-pill total-count">{{ $carts->totalQuantity ?? 0 }}</span>
                 </button>
             </div>
             {{--            <!-- Nav Item - User Information -->--}}
             <div class="nav-item dropdown no-arrow">
                 @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('language.Login') }}</a>
-                        </li>
-                    @endif
+                    <div>
+                        @if (Route::has('login'))
+                            <a class="nav-link auth-user" href="{{ route('login') }}">{{ __('language.Login') }}</a>
+                        @endif
 
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('language.Register') }}</a>
-                        </li>
-                    @endif
+                        @if (Route::has('register'))
+                            <a class="nav-link auth-user" href="{{ route('register') }}">{{ __('language.Register') }}</a>
+                        @endif
+                    </div>
                 @else
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -60,6 +60,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('language.Save') }}
                                 </button>
+                                <button class="btn btn-warning"><a style="text-decoration: none; color: #fff" href="{{route('admin')}}">{{ __('language.Cancel') }}</a></button>
                             </div>
                         </div>
                     </form>
