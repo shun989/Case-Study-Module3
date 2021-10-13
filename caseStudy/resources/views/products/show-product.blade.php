@@ -56,7 +56,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="{{route('home')}}">{{__('language.title')}}</a>
+        <a class="navbar-brand text-primary" href="{{route('home')}}"><strong>{{__('language.title')}}</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
@@ -64,6 +64,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active" aria-current="page"
                                         href="{{route('home')}}">{{__('language.Home')}}</a></li>
+                @if(Auth::user()->role === 1)
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                            href="{{route('admin')}}">QLSP</a></li>
+                @endif
                 <li class="nav-item"><a class="nav-link" href="#!">{{__('language.About')}}</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
@@ -118,6 +122,12 @@
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                          aria-labelledby="userDropdown">
+                        @if(Auth::user()->role === 1)
+                            <a class="dropdown-item" href="{{route("admin")}}">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                QLSP
+                            </a>
+                        @endif
                         <a class="dropdown-item" href="#">
                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                             {{__('language.Profile')}}

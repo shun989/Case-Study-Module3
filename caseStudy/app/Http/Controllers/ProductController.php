@@ -51,6 +51,7 @@ class ProductController extends Controller
     {
         return view('products-manager.create');
     }
+
     public function create(Request $request)
     {
         $dataProduct = $this->productService->create($request->all());

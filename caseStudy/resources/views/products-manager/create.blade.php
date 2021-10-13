@@ -11,12 +11,12 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
+<div class="container" style="margin-top: 100px">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('language.Add new Product') }}</div>
-                <div class="text-center language">
+                <div class="card-header text-center"><h3>{{ __('language.Add new Product') }}</h3></div>
+                <div class="text-center language mt-2">
                     <a class="change-language" href="{{route('view.change-language',['en'])}}">{{__('language.English')}}</a>
                     <span>|</span>
                     <a class="change-language" href="{{route('view.change-language',['vi'])}}">{{__('language.Vietnam')}}</a>
@@ -55,8 +55,8 @@
                                 <input type="text" class="form-control" name="image">
                             </div>
                         </div>
-                        <div class="mb-3 mb-0">
-                            <div class=" offset-md-4">
+                        <div class="mb-3 text-center">
+                            <div>
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('language.Save') }}
                                 </button>
